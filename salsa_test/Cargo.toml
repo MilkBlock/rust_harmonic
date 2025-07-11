@@ -1,0 +1,12 @@
+[package]
+name = "salsa_test"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+crossbeam-channel = "0.5.15"
+dashmap = "6.1.0"
+eyre = "0.6.12"
+notify-debouncer-mini = "0.4.1"
+
+salsa = "0.19.0"

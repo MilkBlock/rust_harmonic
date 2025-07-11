@@ -1,0 +1,16 @@
+[package]
+name = "debug_test"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+dashmap = { path = "../../dashmap" }
+derive_more = { version = "2.0.1", features = ["full"] }
+frunk = "0.4.4"
+hashbrown = "0.15.4"
+impl-trait-for-tuples = "0.2.3"
+parking_lot = { version = "0.12.4", features = ["deadlock_detection"] }
+rtti = "0.4.0"
+rtti-derive = "0.4.0"
+tokio = { version = "1.45.0", features = ["macros", "rt-multi-thread"] }
+tuples = "1.17.0"
