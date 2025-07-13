@@ -1,4 +1,4 @@
-use std::str::FromStr;
+use std::{collections::HashMap, str::FromStr};
 
 // 什么是迭代器
 // 对数组访问的抽象
@@ -58,7 +58,20 @@ fn main(){
         // .map(|x| x * 2) // 每个元素乘以2
         .map(mul_2) // 每个元素乘以2
         .for_each(|x| println!("{}", x)); // 打印结果
+
+
+    let mut a = HashMap::new();
+    a.insert("a", 1);
+    a.insert("b", 1);
+    for i in a.iter(){
+        // :? 调用的是 Debug的 字符串格式化方法
+        println!("{:?}", i)
+        // :? 调用的是 Display的 字符串格式化方法
+    }
 }
+// 你不能为一个标准库的类型实现标准库的trait 
+// 自己的结构体才能实现标准库的trait
+
 // |x| x*2  这是一个闭包，就是一个匿名函数
 fn mul_2(x:&i32) -> i32{
     2*x
