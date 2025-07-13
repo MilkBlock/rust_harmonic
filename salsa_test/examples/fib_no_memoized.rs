@@ -27,7 +27,6 @@ impl Database for MyDb{
 #[salsa::db]
 impl Db for MyDb{
     // 按照 reference 所说， num 这种input 是作为 &mut 进入数据库的，而中间结果比如 tracked 是不可变数据
-    //
     // 但这里的input 导致整个数据库 做不到memoized ，因为 它会对重复的 i32 在数据库中创建不一样的Num Id ，导致数据库
     // 认为他们不是同一个 Num ，即便他们i32 是相同的，数据库不会去自动比较这个
     fn input(&self, num:i32)-> Num{

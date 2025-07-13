@@ -27,16 +27,7 @@ impl Database for MyDb{
 #[salsa::db]
 impl Db for MyDb{
     // 按照 reference 所说， num 这种input 是作为 &mut 进入数据库的，而中间结果比如 tracked 是不可变数据
-    // 
     fn input(&self, num:i32)-> Num{
-        // match self.calculated.get(&num){
-        //     Some(x) => {
-        //         *x
-        //     },
-        //     None => {
-        //         Num::new(self, num)
-        //     },
-        // }
         match self.calculated.entry(num){
             dashmap::Entry::Occupied(occupied_entry) => {
                 occupied_entry.get().clone()
@@ -49,7 +40,7 @@ impl Db for MyDb{
 }
 
 // you should guarantee that all input types are SalsaStructInDb
-// #[salsa::tracked] fn fib(db:&dyn Db,i:i32){}
+// #[salsa::tracked] fn fib(db:&dyn Db,i:i32){} lead to an error
 #[salsa::tracked]
 fn fib(db:&dyn Db, i:Num)->Num{
     match i.num(db) {
