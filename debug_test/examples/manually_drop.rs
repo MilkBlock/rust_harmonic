@@ -1,6 +1,6 @@
 use std::mem::ManuallyDrop;
 
-fn main(){
+fn main() {
     let mut x = ManuallyDrop::new(Box::new(42));
     unsafe {
         ManuallyDrop::drop(&mut x);

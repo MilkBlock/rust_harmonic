@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+bevy_reflect = "0.16.1"
 dashmap = { path = "../../dashmap" }
 derive_more = { version = "2.0.1", features = ["full"] }
 frunk = "0.4.4"

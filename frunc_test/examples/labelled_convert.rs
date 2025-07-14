@@ -1,7 +1,7 @@
 // Suppose that again, we have different User types representing the same data
 // in different stages in our application logic.
-
-use frunk::{labelled_convert_from, Coprod, Coproduct, LabelledGeneric};
+use frunk::{field, LabelledGeneric, labelled::{Field}};
+use frunk::{labelled_convert_from, Coprod, Coproduct, };
 
 #[derive(LabelledGeneric)]
 struct NewUser<'a> {
@@ -31,6 +31,7 @@ fn main(){
         // Also note that we're using a helper method to avoid having to use universal
     // function call syntax
     let s_user: SavedUser = labelled_convert_from(n_user);
+    <s_user as LabelledGeneric>
 
     assert_eq!(s_user.first_name, "Joe");
     assert_eq!(s_user.last_name, "Blow");
@@ -44,9 +45,8 @@ fn main(){
         age: usize,
     }
 
-    // labelled generic labelled generic 
-    // labelled generic labelled generic 
-    // labelled generic labelled generic             
+
+    let a = DeletedUser as 
     //  This would fail at compile time :)
     let d_user: DeletedUser = labelled_convert_from(s_user);
 

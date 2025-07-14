@@ -1,5 +1,5 @@
-fn main(){
-    let a  = {
+fn main() {
+    let a = {
         struct M;
         M
     };

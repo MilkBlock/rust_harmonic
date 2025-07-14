@@ -7,7 +7,4 @@ fn foo(x: i32) -> Box<dyn Iterator<Item = i32>> {
         _ => Box::new(vec![5, 10].into_iter()),
     }
 }
-fn main(){
-
-}
-
+fn main() {}

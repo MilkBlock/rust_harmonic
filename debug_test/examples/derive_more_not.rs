@@ -5,13 +5,9 @@ use derive_more::Not;
 #[derive(Not)]
 struct MyInts(i32, i32);
 
+struct PP {}
 
-struct PP{
-
-
-}
-
-fn main(){
+fn main() {
     let a = 3.not();
-    println!("{}",a);
+    println!("{}", a);
 }

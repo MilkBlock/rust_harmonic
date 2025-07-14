@@ -2,12 +2,12 @@ use std::fmt::Debug;
 trait DoSomething<T> {
     fn do_sth(&self, value: T);
 }
-impl<'a, T:Debug> DoSomething<T> for &'a usize {
+impl<'a, T: Debug> DoSomething<T> for &'a usize {
     fn do_sth(&self, value: T) {
         println!("{:?} {:?}", self, value);
     }
 }
-fn foo(b: impl for<'b>  DoSomething<&'b usize>) {
+fn foo(b: impl for<'b> DoSomething<&'b usize>) {
     let s: usize = 10;
     b.do_sth(&s); // s does not live long enough 
 }
@@ -15,8 +15,8 @@ fn foo(b: impl for<'b>  DoSomething<&'b usize>) {
 trait RefTuple<'a> {
     type Output;
 }
-// this can be generated  
-impl<'a, A:'a, B:'a> RefTuple<'a> for (A, B) {
+// this can be generated
+impl<'a, A: 'a, B: 'a> RefTuple<'a> for (A, B) {
     type Output = (&'a A, &'a B);
 }
 

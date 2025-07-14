@@ -1,22 +1,24 @@
 struct A;
 const _: () = {
     pub type B = A;
-    pub struct M{
-        a:i32
+    pub struct M {
+        a: i32,
     }
     pub const EXTERNAL_CONST: i32 = 42; // 标记为 pub
-    pub fn external_fn() -> &'static str { "Hello" }
-    impl A{
-        fn p() -> M{
+    pub fn external_fn() -> &'static str {
+        "Hello"
+    }
+    impl A {
+        fn p() -> M {
             println!("fh");
-            M { a:3 }
+            M { a: 3 }
         }
     }
 };
 
-struct S{
-    a:i32,
-    b:i32,
+struct S {
+    a: i32,
+    b: i32,
 }
 // fn main() {
 //     let mut s = A::p();

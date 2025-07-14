@@ -31,6 +31,4 @@ impl M for Tuple {
         Ok(())
     }
 }
-fn main(){
-
-}
+fn main() {}

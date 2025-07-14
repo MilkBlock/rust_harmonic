@@ -1,12 +1,12 @@
-trait A{ fn hello(){println!("hello")}}
-
-struct Demo{
-
+trait A {
+    fn hello() {
+        println!("hello")
+    }
 }
 
-impl<T> A for T where T:Default{
-    
-}
-fn main(){
-    let d  = Demo{};
+struct Demo {}
+
+impl<T> A for T where T: Default {}
+fn main() {
+    let d = Demo {};
 }

@@ -6,12 +6,16 @@ trait MyTrait {
 
 struct Cat;
 impl MyTrait for Cat {
-    fn speak(&self) { println!("Meow"); }
+    fn speak(&self) {
+        println!("Meow");
+    }
 }
 
 struct Dog;
 impl MyTrait for Dog {
-    fn speak(&self) { println!("Woof"); }
+    fn speak(&self) {
+        println!("Woof");
+    }
 }
 
 fn main() {
@@ -24,13 +28,10 @@ fn main() {
         fake_dog.speak(); // 很可能崩溃或输出垃圾
     }
 }
-fn m(s:SS){
+fn m(s: SS) {
     use M::SS;
 }
 
-
-pub mod M{
-    pub struct SS{
-
-    }
+pub mod M {
+    pub struct SS {}
 }

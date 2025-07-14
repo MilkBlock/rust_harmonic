@@ -1,9 +1,10 @@
 use std::{thread, time::Duration};
 
-use parking_lot::{deadlock, Mutex};
+use parking_lot::{Mutex, deadlock};
 
 fn main() {
-    { // only for #[cfg]
+    {
+        // only for #[cfg]
 
         // Create a background thread which checks for deadlocks every 10s
         let a = thread::spawn(move || {
