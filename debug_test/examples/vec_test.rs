@@ -10,5 +10,5 @@ fn main() {
 }
 
 fn de(a: &[i32]) {
-    let [a, b, c] = a;
+    let [a, b, c] = a else { unreachable!() };
 }
