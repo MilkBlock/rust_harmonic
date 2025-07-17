@@ -25,4 +25,14 @@ fn main() {
     // let a:&mut C = **A;
     **a = C;
     *a = b;
+
+    let k = K(3);
+    // 这说明编译器会自动在 变量的左边加上 *
+    read_i32(&*k);
+    read_i32(&k);
 }
+
+#[derive(Deref)]
+struct K(i32);
+
+fn read_i32(a: &i32) {}
